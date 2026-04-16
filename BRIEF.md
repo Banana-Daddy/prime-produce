@@ -89,13 +89,14 @@ To ship this as a live client site (not a mockup), a Claude Code Opus high-effor
 ## Build Timing
 | Phase | Duration |
 |---|---|
-| Step 1: READ (research ingestion + synthesis) | ~2m |
-| Step 2: DIRECTION (two creative briefs) | ~2m |
-| Step 3: BUILD (two mockups + selector) | ~12m |
+| Research ingestion (ChatGPT + Claude dossier) + Direction | conversational |
+| Step 3: BUILD (Ledger + Packing House + selector) | ~12m |
 | Step 4: VERIFY (rendering + ACCURACY.md) | ~3m |
 | Step 5: BRIEF (this file) | ~2m |
-| Step 6: PUBLISH (GitHub + Pages) | TBD |
-| Step 7: DELIVER | TBD |
-| **Total: Prompt to Live Link** | **TBD** |
+| Step 6: PUBLISH (GitHub repo + Pages first build) | ~5m |
+| **First Write → Live 200** | **~22m** |
 
 *No image generation time — zero AI imagery used this build.*
+
+**Live link:** https://banana-daddy.github.io/prime-produce/
+**Repo:** https://github.com/Banana-Daddy/prime-produce

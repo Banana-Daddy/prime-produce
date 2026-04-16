@@ -1,0 +1,6 @@
+# Research is confidential — don't publish
+research/
+
+# OS
+.DS_Store
+Thumbs.db

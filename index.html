@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prime Produce, Inc. — mockup directions by Banana Bytes.">
+<title>Prime Produce — Mockup Directions · Banana Bytes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F1EDE4;
+    --ink: #1E4A2D;
+    --apple: #C64034;
+    --warmblack: #2A2A28;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--warmblack);
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    min-height: 100vh;
+    padding: 3rem 1.25rem 2rem;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: "tnum"; }
+  .italic-serif { font-family: 'Instrument Serif', serif; font-style: italic; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  .masthead { text-align: center; margin-bottom: 3rem; }
+  .masthead .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(30, 74, 45, 0.7);
+    margin-bottom: 1.25rem;
+  }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    color: var(--ink);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .masthead h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--apple);
+  }
+  .masthead p {
+    margin: 1.5rem auto 0;
+    max-width: 560px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(42, 42, 40, 0.85);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid rgba(30, 74, 45, 0.15);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(30, 74, 45, 0.12);
+    border-color: rgba(30, 74, 45, 0.35);
+  }
+
+  .card .preview {
+    aspect-ratio: 16/10;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  /* Ledger preview */
+  .preview-ledger {
+    background: #F1EDE4;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(30,74,45,0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 60%, rgba(198,64,52,0.03) 0%, transparent 50%);
+  }
+  .preview-ledger::before,
+  .preview-ledger::after {
+    content: "";
+    position: absolute;
+    left: 2rem; right: 2rem;
+    border-top: 1px solid rgba(30,74,45,0.4);
+  }
+  .preview-ledger::before { top: 1.25rem; }
+  .preview-ledger::after { bottom: 1.25rem; border-top: none; border-bottom: 3px double rgba(30,74,45,0.4); }
+  .preview-ledger .mock {
+    text-align: center;
+    position: relative;
+  }
+  .preview-ledger .mock-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(30, 74, 45, 0.75);
+    margin-bottom: 0.9rem;
+  }
+  .preview-ledger .mock h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--ink);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .preview-ledger .mock h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--apple);
+  }
+  .preview-ledger .mock-ledger {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(30, 74, 45, 0.7);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Packing House preview */
+  .preview-packing {
+    background: #1E4A2D;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(241,237,228,0.05) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 80%, rgba(198,64,52,0.09) 0%, transparent 55%);
+    color: #F1EDE4;
+  }
+  .preview-packing .mock {
+    text-align: center;
+  }
+  .preview-packing .mock-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(241, 237, 228, 0.65);
+    margin-bottom: 0.9rem;
+  }
+  .preview-packing .mock h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .preview-packing .mock h3 em {
+    font-style: italic;
+    color: rgba(241, 237, 228, 0.85);
+  }
+  .preview-packing .mock-chips {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .preview-packing .mock-chips span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(241, 237, 228, 0.25);
+    border-radius: 999px;
+    color: rgba(241, 237, 228, 0.9);
+  }
+
+  .card .meta {
+    padding: 1.5rem 1.75rem 1.75rem;
+    border-top: 1px solid rgba(30, 74, 45, 0.12);
+  }
+  .card .meta .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--apple);
+    margin-bottom: 0.5rem;
+  }
+  .card .meta h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 1.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .card .meta h2 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .card .meta p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(42, 42, 40, 0.8);
+    margin-bottom: 0.75rem;
+  }
+  .card .meta .sig {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: rgba(30, 74, 45, 0.7);
+    border-top: 1px solid rgba(30, 74, 45, 0.15);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .card .meta .arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .card:hover .arrow { color: var(--apple); }
+
+  .logo {
+    display: block;
+    height: 44px;
+    width: auto;
+    margin: 0 auto 2rem;
+  }
+
+  .colophon {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(30, 74, 45, 0.5);
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(30, 74, 45, 0.15);
+  }
+  .colophon a { color: var(--warmblack); text-decoration: none; opacity: 0.6; }
+  .colophon a:hover { opacity: 1; color: var(--apple); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="images/logo.png" alt="Prime Produce, Inc." class="logo">
+
+    <div class="masthead">
+      <div class="eyebrow">Banana Bytes · Mockup Directions · April 2026</div>
+      <h1>Two takes,<br><em>one brand.</em></h1>
+      <p>
+        Same brand, same facts — two distinct design languages. <strong>The Ledger</strong> leans into the editorial heritage of the trade. <strong>The Packing House</strong> leans into confident, present&#8209;day presence. Pick the one that feels like Prime Produce.
+      </p>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="direction-ledger.html">
+        <div class="preview preview-ledger">
+          <div class="mock">
+            <div class="mock-eyebrow">Vol. XXVI · Est. 1999 · Dallas, TX</div>
+            <h3>Prime<br>Produce.</h3>
+            <div class="mock-ledger">
+              <span>1999</span><span>·</span><span>PACA 20000096</span><span>·</span><span>USDA AMS</span>
+            </div>
+          </div>
+        </div>
+        <div class="meta">
+          <div class="tag">Direction A</div>
+          <h2>The Ledger</h2>
+          <p>Editorial, heritage&#8209;driven. Cream paper, green ink, numbered sections, ruled hairlines, ledger&#8209;style data blocks. A twenty&#8209;six&#8209;year trade publication that finally has a website.</p>
+          <div class="sig">Fraunces · Source Serif 4 · JetBrains Mono</div>
+          <div class="arrow">View direction →</div>
+        </div>
+      </a>
+
+      <a class="card" href="direction-packing-house.html">
+        <div class="preview preview-packing">
+          <div class="mock">
+            <div class="mock-eyebrow">A Dallas Produce Brokerage · Since 1999</div>
+            <h3>Fresh.<br><em>On spec, on time.</em></h3>
+            <div class="mock-chips">
+              <span>Apples</span><span>Grapes</span><span>Stone Fruit</span>
+            </div>
+          </div>
+        </div>
+        <div class="meta">
+          <div class="tag">Direction B</div>
+          <h2>The Packing House</h2>
+          <p>Confident, modern, warm. Deep forest green dominant, full&#8209;bleed hero, a commodity shelf that scrolls. A small broker that shows up like a major one — without theatre.</p>
+          <div class="sig">Instrument Serif · Manrope · JetBrains Mono</div>
+          <div class="arrow">View direction →</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="colophon">
+      <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener">Mockups by Banana Bytes</a>
+    </div>
+  </div>
+</body>
+</html>

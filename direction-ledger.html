@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prime Produce, Inc. — PACA-licensed Dallas produce brokerage. Fresh fruits and vegetables delivered on spec, on time since 1999.">
+<title>Prime Produce, Inc. — Dallas Produce Brokerage Since 1999</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#F1EDE4',
+        paper: '#E8E1D1',
+        ink: '#1E4A2D',
+        apple: '#C64034',
+        warmblack: '#2A2A28',
+        rule: '#1E4A2D33',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F1EDE4; color: #2A2A28; font-family: 'Source Serif 4', Georgia, serif; font-optical-sizing: auto; }
+  .display { font-family: 'Fraunces', serif; font-optical-sizing: auto; font-variation-settings: "opsz" 144, "SOFT" 50; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: "tnum"; }
+  .rule { border-color: rgba(30, 74, 45, 0.22); }
+  .rule-heavy { border-color: rgba(30, 74, 45, 0.55); }
+  .small-caps { font-variant: small-caps; letter-spacing: 0.08em; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .dropcap::first-letter {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 4.5em;
+    float: left;
+    line-height: 0.85;
+    margin: 0.1em 0.08em 0 0;
+    color: #1E4A2D;
+  }
+  .paper-grain {
+    background-color: #F1EDE4;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(30,74,45,0.03) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 60%, rgba(198,64,52,0.025) 0%, transparent 50%);
+  }
+  .hairline { height: 1px; background: rgba(30, 74, 45, 0.28); }
+  .double-rule { border-top: 1px solid rgba(30,74,45,0.4); border-bottom: 3px double rgba(30,74,45,0.4); }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Ledger rule lines on data cards */
+  .ledger-line { background-image: linear-gradient(to bottom, rgba(30,74,45,0.14) 1px, transparent 1px); background-size: 100% 2rem; }
+
+  /* Commodity list */
+  .commodity-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.9rem 0; border-bottom: 1px solid rgba(30,74,45,0.18); }
+  .commodity-row:last-child { border-bottom: none; }
+  .commodity-row .dots { flex: 1; margin: 0 0.75rem; border-bottom: 1px dotted rgba(30,74,45,0.35); transform: translateY(-4px); }
+
+  /* Mobile-first nav anchor */
+  .topbar { backdrop-filter: blur(6px); background: rgba(241, 237, 228, 0.85); }
+</style>
+</head>
+<body class="paper-grain">
+
+<!-- Top bar -->
+<header class="topbar sticky top-0 z-40 border-b rule">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-3 md:py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <img src="images/logo.png" alt="Prime Produce, Inc. — Dallas, TX" class="h-8 md:h-9 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-widest text-ink">
+      <a href="#trade" class="hover:text-apple transition-colors">The Trade</a>
+      <a href="#commodities" class="hover:text-apple transition-colors">Commodities</a>
+      <a href="#serve" class="hover:text-apple transition-colors">Who We Serve</a>
+      <a href="#principals" class="hover:text-apple transition-colors">Principals</a>
+      <a href="#contact" class="hover:text-apple transition-colors">Contact</a>
+    </div>
+    <a href="tel:+12142214554" class="mono text-[11px] md:text-xs text-ink hover:text-apple transition-colors">
+      (214) 221-4554
+    </a>
+  </div>
+</header>
+
+<!-- Masthead -->
+<section id="top" class="pt-10 md:pt-20 pb-8 md:pb-14 border-b-2 rule-heavy">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <!-- Ledger strip -->
+    <div class="mono text-[10px] md:text-[11px] tracking-widest uppercase text-ink/80 flex flex-wrap gap-x-6 gap-y-2 mb-6 md:mb-10">
+      <span>Vol. XXVI</span>
+      <span>·</span>
+      <span>Est. 1999</span>
+      <span>·</span>
+      <span>Dallas, TX</span>
+      <span>·</span>
+      <span class="hidden md:inline">PACA&nbsp;No.&nbsp;20000096</span>
+      <span class="hidden md:inline">·</span>
+      <span class="hidden md:inline">USDA&nbsp;AMS&nbsp;21200GJ5H</span>
+    </div>
+
+    <!-- Masthead headline -->
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+      <div class="md:col-span-8">
+        <p class="small-caps text-ink text-xs md:text-sm mb-4 md:mb-6">A Dallas Produce Brokerage</p>
+        <h1 class="display text-ink font-semibold leading-[0.95] tracking-[-0.02em] text-[3.5rem] sm:text-7xl md:text-[8.5rem] lg:text-[10rem]">
+          Prime<br>Produce.
+        </h1>
+      </div>
+      <div class="md:col-span-4 md:pb-4">
+        <p class="display italic text-ink/90 text-xl md:text-2xl leading-snug mb-4">
+          Fresh. Reliable.<br>On spec, on time<br>since <span class="tnum">1999</span>.
+        </p>
+        <p class="text-sm md:text-base text-warmblack/75 leading-relaxed">
+          A privately held Texas brokerage trading deciduous fruit, melons, stone fruit, and salad vegetables across the United States and Mexico — a quiet twenty&#8209;six&#8209;year record of getting the load right.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature image -->
+<section class="border-b rule">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-14">
+    <figure class="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+      <div class="md:col-span-8 order-2 md:order-1">
+        <div class="overflow-hidden">
+          <img src="images/hero.jpg" alt="A spread of fresh apples, grapes, melons, stone fruit, and cherries on a wood table, with the Dallas skyline beyond." class="w-full aspect-[4/3] md:aspect-[3/2] object-cover" loading="eager">
+        </div>
+      </div>
+      <figcaption class="md:col-span-4 order-1 md:order-2 md:pt-8">
+        <div class="mono text-[10px] uppercase tracking-widest text-ink mb-3">Plate 01</div>
+        <p class="display italic text-lg md:text-xl text-ink leading-snug mb-3">
+          The trade, in one frame.
+        </p>
+        <p class="text-sm md:text-[15px] text-warmblack/80 leading-relaxed">
+          Eleven commodities moved in volume from domestic growers and Mexican partners to customer accounts across the DFW metro and the lower forty&#8209;eight. No catalog. No slideshow. The shipment is the statement.
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Credentials / trust bar -->
+<section class="border-b rule bg-paper/40">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-14">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 01 — Credentials of Record</div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+      <div class="border-t-2 rule-heavy pt-4">
+        <div class="display text-4xl md:text-5xl text-ink tnum font-semibold leading-none">26<span class="text-apple">+</span></div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2">Years in the Trade</div>
+        <p class="text-xs md:text-sm text-warmblack/70 mt-3 leading-snug">Continuously operated since August&nbsp;19,&nbsp;1999.</p>
+      </div>
+      <div class="border-t-2 rule-heavy pt-4">
+        <div class="display text-4xl md:text-5xl text-ink tnum font-semibold leading-none">11</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2">Commodities Brokered</div>
+        <p class="text-xs md:text-sm text-warmblack/70 mt-3 leading-snug">Deciduous, melons, stone fruit, peppers.</p>
+      </div>
+      <div class="border-t-2 rule-heavy pt-4">
+        <div class="display text-4xl md:text-5xl text-ink tnum font-semibold leading-none">PACA</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2">License <span class="tnum">20000096</span></div>
+        <p class="text-xs md:text-sm text-warmblack/70 mt-3 leading-snug">Perishable Agricultural Commodities Act&nbsp;— trust compliant.</p>
+      </div>
+      <div class="border-t-2 rule-heavy pt-4">
+        <div class="display text-4xl md:text-5xl text-ink tnum font-semibold leading-none">USDA</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2">AMS <span class="tnum">21200GJ5H</span></div>
+        <p class="text-xs md:text-sm text-warmblack/70 mt-3 leading-snug">Listed in the National Shippers Contact record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Trade (about) -->
+<section id="trade" class="border-b rule">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 02 — The Trade</div>
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+      <h2 class="md:col-span-5 display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-6xl">
+        A small&nbsp;broker,<br><em class="italic text-apple">patiently kept.</em>
+      </h2>
+      <div class="md:col-span-7">
+        <p class="dropcap text-lg md:text-xl leading-[1.6] text-warmblack/90 mb-6">
+          Prime Produce began in 1999 with two principals, one phone line, and a simple standard: call the grade you see, ship the load you called, and settle on the terms you signed. Twenty&#8209;six years later the practice is the same. The grades are confirmed on the dock. The specs travel with the load. The receivables are protected under PACA.
+        </p>
+        <p class="text-base md:text-lg leading-[1.7] text-warmblack/80 mb-6">
+          The trade is built on repeat counterparties — customer accounts, growers and shippers, transporters, and other brokers who work the same year in, year out. We don&rsquo;t pitch. We answer. A good partner is a short call and a clean tally.
+        </p>
+        <blockquote class="border-l-2 rule-heavy pl-5 md:pl-7 py-1 my-6">
+          <p class="display italic text-xl md:text-2xl text-ink leading-snug">
+            &ldquo;Supply from Mexico, the East Coast, and Chile continues to move — weather patterns shift, but the obligation to deliver on spec does not.&rdquo;
+          </p>
+          <footer class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-3">
+            Marc Nelson, Partner &nbsp;·&nbsp; Blue Book Services, &ldquo;Hat&rsquo;s Off to Dallas,&rdquo; 2016
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Commodities ledger -->
+<section id="commodities" class="border-b rule bg-paper/40">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 03 — On The Ledger</div>
+    <div class="grid md:grid-cols-12 gap-6 md:gap-14">
+      <div class="md:col-span-4">
+        <h2 class="display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-5xl mb-4">
+          What we<br><em class="italic">broker.</em>
+        </h2>
+        <p class="text-sm md:text-base text-warmblack/80 leading-relaxed mb-4">
+          Year&#8209;round deciduous fruit, melons, stone fruit, and one salad staple. Sourced from U.S. domestic growers and Mexican partners; shipped into the DFW metro and beyond.
+        </p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/70">
+          Per Produce Market Guide listing,<br>Co.&nbsp;ID&nbsp;<span class="tnum">176366</span>
+        </p>
+      </div>
+      <div class="md:col-span-8">
+        <div class="double-rule py-4">
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Apples</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Deciduous</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Grapes</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Deciduous</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Pears</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Deciduous</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Cantaloupe</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Melon</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Honeydew</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Melon</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Apricots</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Stone Fruit</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Cherries</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Stone Fruit</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Nectarines</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Stone Fruit</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Peaches</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Stone Fruit</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Plums</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Stone Fruit</span></div>
+          <div class="commodity-row"><span class="display text-ink text-2xl md:text-3xl font-medium">Bell Peppers</span><span class="dots"></span><span class="mono text-xs md:text-sm text-ink/70">Salad Vegetable</span></div>
+        </div>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/60 mt-4">Additional commodities available on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who we serve -->
+<section id="serve" class="border-b rule">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 04 — Counterparties</div>
+    <h2 class="display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-6xl mb-10 md:mb-14">
+      Who we<br><em class="italic">do trade with.</em>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 md:gap-0">
+      <article class="md:pr-8 md:border-r rule">
+        <div class="display text-apple text-6xl md:text-7xl font-semibold leading-none tnum">i.</div>
+        <h3 class="display text-ink text-2xl md:text-3xl mt-3 mb-4 font-medium">Customer Accounts</h3>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed mb-4">
+          Retailers, foodservice distributors, and restaurant groups buying fruit and vegetables at wholesale. You get the grade you specified, in the pack size you specified, on the day you specified. If we can&rsquo;t, we call.
+        </p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/60">
+          Wholesale · Foodservice · Retail
+        </p>
+      </article>
+      <article class="md:px-8 md:border-r rule">
+        <div class="display text-apple text-6xl md:text-7xl font-semibold leading-none tnum">ii.</div>
+        <h3 class="display text-ink text-2xl md:text-3xl mt-3 mb-4 font-medium">Growers &amp; Shippers</h3>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed mb-4">
+          Domestic farms and Mexican partners looking for a broker who moves the crop and pays on the contract. Clean communication from field report through final accounting. Receivables protected under PACA.
+        </p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/60">
+          Domestic · Mexico · Chile-season
+        </p>
+      </article>
+      <article class="md:pl-8">
+        <div class="display text-apple text-6xl md:text-7xl font-semibold leading-none tnum">iii.</div>
+        <h3 class="display text-ink text-2xl md:text-3xl mt-3 mb-4 font-medium">Transporters</h3>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed mb-4">
+          Carriers and owner&#8209;operators pulling reefer loads out of DFW and the Pharr / McAllen corridor. Clear specs, clean pickup windows, prompt settlement. The load paperwork is ready when you are.
+        </p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/60">
+          Reefer · DFW · South TX Corridor
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Press -->
+<section class="border-b rule bg-paper/40">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+      <div class="md:col-span-5">
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mb-3">§ 05 — Of Record, In Print</div>
+        <h2 class="display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-5xl mb-5">
+          As featured in.
+        </h2>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed mb-4">
+          Prime Produce was profiled in Blue Book Services&rsquo; June 2016 Dallas market spotlight, <em>&ldquo;Hat&rsquo;s Off to Dallas,&rdquo;</em> alongside peer distributors and brokers working the DFW trade.
+        </p>
+        <p class="text-sm md:text-base text-warmblack/70 leading-relaxed">
+          Blue Book Services has reported on the North American produce industry since 1901.
+        </p>
+      </div>
+      <div class="md:col-span-7 bg-cream border rule p-8 md:p-12 flex items-center justify-center">
+        <img src="images/blue-book.png" alt="Blue Book Services — Since 1901" class="max-w-[360px] md:max-w-[480px] w-full h-auto" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Principals -->
+<section id="principals" class="border-b rule">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 06 — The Principals</div>
+    <h2 class="display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-6xl mb-10 md:mb-14">
+      Two men,<br><em class="italic">same office, since <span class="tnum">1999</span>.</em>
+    </h2>
+    <div class="grid md:grid-cols-2 gap-10 md:gap-20">
+      <article>
+        <div class="aspect-[4/5] bg-paper border rule flex items-center justify-center mb-5 relative overflow-hidden">
+          <div class="absolute inset-0 ledger-line opacity-30"></div>
+          <div class="relative text-center p-6">
+            <div class="display text-ink text-7xl md:text-8xl font-light italic leading-none">RH</div>
+            <div class="mono text-[10px] uppercase tracking-widest text-ink/60 mt-4">Portrait forthcoming</div>
+          </div>
+        </div>
+        <h3 class="display text-ink text-3xl md:text-4xl font-medium">Rick Harkinson</h3>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2 mb-4">President &amp; Owner · Since 1999</p>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed">
+          Founded Prime Produce with Marc Nelson in August 1999. Registered agent of record with the State of Texas. Twenty&#8209;six years in the Dallas trade and counting.
+        </p>
+      </article>
+      <article>
+        <div class="aspect-[4/5] bg-paper border rule flex items-center justify-center mb-5 relative overflow-hidden">
+          <div class="absolute inset-0 ledger-line opacity-30"></div>
+          <div class="relative text-center p-6">
+            <div class="display text-ink text-7xl md:text-8xl font-light italic leading-none">MN</div>
+            <div class="mono text-[10px] uppercase tracking-widest text-ink/60 mt-4">Portrait forthcoming</div>
+          </div>
+        </div>
+        <h3 class="display text-ink text-3xl md:text-4xl font-medium">Marc J. Nelson</h3>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/70 mt-2 mb-4">Partner · Since 1999</p>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed">
+          Co&#8209;founding partner. Quoted in Blue Book Services&rsquo; 2016 Dallas feature on Mexican, East&nbsp;Coast, and Chilean supply&#8209;chain conditions. Voice of the desk on import&#8209;season strategy.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="border-b rule bg-paper/40">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20">
+    <div class="mono text-[10px] md:text-[11px] uppercase tracking-widest text-ink/70 mb-6">§ 07 — Correspondence</div>
+    <div class="grid md:grid-cols-12 gap-8 md:gap-14">
+      <div class="md:col-span-5">
+        <h2 class="display text-ink font-medium leading-[0.95] tracking-[-0.02em] text-4xl md:text-6xl mb-6">
+          Place a call.<br><em class="italic">Open a load.</em>
+        </h2>
+        <p class="text-[15px] md:text-base text-warmblack/85 leading-relaxed mb-6">
+          The desk is best reached by phone for same&#8209;day business. For contracts, confirmations, and after&#8209;hours correspondence, email is on file.
+        </p>
+        <a href="tel:+12142214554" class="inline-block display italic text-4xl md:text-5xl text-apple hover:text-ink transition-colors">(214) 221&#8209;4554</a>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <div class="border-t-2 rule-heavy pt-4">
+          <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mb-2">Office</div>
+          <address class="not-italic text-base md:text-lg text-ink leading-snug">
+            9550 Forest Lane<br>Suite 510<br>Dallas, Texas <span class="tnum">75243</span>
+          </address>
+        </div>
+        <div class="border-t-2 rule-heavy pt-4">
+          <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mb-2">Direct Lines</div>
+          <p class="text-base md:text-lg text-ink leading-snug tnum mono">
+            Tel <a href="tel:+12142214554" class="hover:text-apple transition-colors">214·221·4554</a><br>
+            Fax 214·221·1886
+          </p>
+        </div>
+        <div class="border-t-2 rule-heavy pt-4">
+          <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mb-2">Correspondence</div>
+          <p class="text-base md:text-lg text-ink leading-snug break-all">
+            <a href="mailto:primeproduce@hotmail.com" class="hover:text-apple transition-colors">primeproduce@hotmail.com</a>
+          </p>
+        </div>
+        <div class="border-t-2 rule-heavy pt-4">
+          <div class="mono text-[10px] uppercase tracking-widest text-ink/70 mb-2">Hours</div>
+          <p class="text-base md:text-lg text-ink leading-snug">
+            Monday – Friday<br><span class="text-warmblack/70 text-sm italic">Call for after&#8209;hours desk</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Colophon / footer -->
+<footer class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-14">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div>
+        <img src="images/logo.png" alt="Prime Produce, Inc." class="h-10 w-auto mb-5">
+        <p class="display italic text-ink text-lg md:text-xl leading-snug max-w-sm">
+          Fresh. Reliable. On spec, on time since <span class="tnum">1999</span>.
+        </p>
+      </div>
+      <div class="mono text-[10px] uppercase tracking-widest text-ink/70 space-y-1.5">
+        <div>Prime Produce, Inc.</div>
+        <div>Dallas, Texas</div>
+        <div>PACA <span class="tnum">20000096</span> · USDA AMS <span class="tnum">21200GJ5H</span></div>
+        <div>SIC <span class="tnum">5148</span> · TX SOS <span class="tnum">0154720800</span></div>
+        <div class="pt-2">© <span class="tnum">1999</span>–<span class="tnum">2026</span> Prime Produce, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; padding:1.5rem 1rem; font-size:0.7rem; letter-spacing:0.05em; opacity:0.45; background:#F1EDE4;">
+    <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener" style="text-decoration:none; color:#2A2A28;">
+      Mockup created by Banana Bytes
+    </a>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
